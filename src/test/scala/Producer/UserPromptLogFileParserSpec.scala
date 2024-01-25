@@ -20,7 +20,7 @@ class UserPromptLogFileParserSpec extends AnyFlatSpec with Matchers {
   }
 
   it should "handle invalid log entries" in {
-    val invalidLogEntry = "192.168.0.1 - - [14/Apr/2023:10:32:11 +0000] \"Some invalid prompt\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\" invalid_response_time"
+    val invalidLogEntry = "192.168.0.1 - - [12/Jan/2021:10:32:11 +0000] \"Some invalid prompt\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\" invalid_response_time"
     val parsed = logFileParser.parse(logFileParser.userPromptLogEntry, invalidLogEntry)
 
     parsed.successful shouldEqual false
